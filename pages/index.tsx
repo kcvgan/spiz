@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import Sticky from 'react-sticky-el';
 
 import { Product } from '../components/Product.model';
 import ProductList from '../components/ProductList';
@@ -27,9 +26,10 @@ const Root = styled.div`
 `;
 
 const Header = styled.div`
+    position: sticky;
+    top: 0px;
     z-index: 2;
     min-height: 30px;
-    width: 100%;
     background-color: ${getColor('white')};
     text-align: center;
     padding: ${getPadding('large')};
@@ -38,21 +38,18 @@ const Header = styled.div`
 const BottomNav = styled.div`
     z-index: 2;
     min-height: 30px;
-    width: 100%;
     background-color: ${getColor('white')};
     text-align: center;
     padding: ${getPadding('large')};
+    position: sticky;
+    bottom: 0px;
 `;
 
 const Home = () => (
     <Root>
-        <Sticky>
-            <Header>Produkty</Header>
-        </Sticky>
+        <Header>Produkty</Header>
         <ProductList {...{ products }} />
-        <Sticky mode="bottom">
-            <BottomNav>Produkty</BottomNav>
-        </Sticky>
+        <BottomNav>Dodaj produkt</BottomNav>
     </Root>
 );
 
