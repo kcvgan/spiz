@@ -23,7 +23,7 @@ const products: Product[] = [
 
 const Root = styled.div`
   margin: 0;
-  height: calc(100vh - 168px);
+  height: calc(100vh - 160px);
 `;
 
 const Header = styled.div`

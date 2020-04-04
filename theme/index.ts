@@ -4,7 +4,8 @@ const colors = {
     main: 'cyan',
     secondary: 'magenta',
     lightGrey: 'lightgrey',
-    white: 'white'
+    white: 'white',
+    slightlyRed: '#EC615B'
 };
 
 type Colors = typeof colors;
