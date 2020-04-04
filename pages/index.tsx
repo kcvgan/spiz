@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { Product } from '@/components/Product.model';
 import ProductList from '@/components/ProductList';
 import { getColor, getPadding } from '@/theme';
+import NavBar from '@/components/NavBar';
 
 const products: Product[] = [
   {
@@ -49,7 +50,7 @@ const Home = () => (
   <Root>
     <Header>Produkty</Header>
     <ProductList {...{ products }} />
-    <BottomNav>Dodaj produkt</BottomNav>
+    <NavBar />
   </Root>
 );
 

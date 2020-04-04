@@ -1,1 +1,1 @@
-export { default as PlusIcon } from './public/icons/plus-icon.svg';
+export { default as PlusIcon } from '@/public/icons/plus-icon.svg';
