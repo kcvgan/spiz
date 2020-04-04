@@ -6,7 +6,7 @@ const HeaderContainer = styled.div`
   position: sticky;
   top: 0;
   z-index: 2;
-  min-height: 30px;
+  max-height: 44px;
   background-color: ${getColor('white')};
   text-align: center;
   padding: ${getPadding('large')};
