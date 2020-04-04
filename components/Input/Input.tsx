@@ -36,7 +36,14 @@ const Input = ({ className, inputProps }: InputProps) => {
     }
   }, [inputProps]);
 
-  return <StyledInput ref={inputElement} {...{ className }} {...inputProps} />;
+  return (
+    <StyledInput
+      autoFocus
+      ref={inputElement}
+      {...{ className }}
+      {...inputProps}
+    />
+  );
 };
 
 export default Input;

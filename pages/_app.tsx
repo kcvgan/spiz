@@ -4,7 +4,17 @@ import { ThemeProvider, createGlobalStyle } from 'styled-components';
 import appTheme from '@/theme';
 
 const GlobalStyle = createGlobalStyle`
+  html {
+      overflow: hidden;
+      height: 100%;
+      position: fixed;
+      width: 100%;
+   }
+   
     body {
+          overflow: auto;
+      height: 100%;
+      position: relative;
         margin: 0;
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     }
