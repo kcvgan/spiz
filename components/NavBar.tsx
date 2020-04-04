@@ -42,7 +42,7 @@ const IconWrapper = styled.div`
 `;
 
 const NavBar: FC = () => {
-  const [isModalOpen, setModalOpen] = useState(true);
+  const [isModalOpen, setModalOpen] = useState(false);
 
   return (
     <>
