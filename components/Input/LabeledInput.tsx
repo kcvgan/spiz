@@ -24,7 +24,7 @@ interface Props extends InputProps {
 const LabeledInput = ({ className, inputProps, label }: Props) => (
   <InputLabelWrapper>
     <Label>{label}</Label>
-    <Input {...{ className }} {...inputProps} />
+    <Input {...{ className, inputProps }} />
   </InputLabelWrapper>
 );
 

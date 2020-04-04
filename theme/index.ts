@@ -23,6 +23,7 @@ type Padding = typeof padding;
 const shellHeights = {
   header: '54px',
   navBar: '57px',
+  contentContainer: 'calc(100vh - 54px - 56px - 18px - 18px)',
 };
 
 type ShellHeights = typeof shellHeights;

@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import AppHeader from '@/components/AppHeader';
 import NavBar from '@/components/NavBar';
+import { getShellHeights } from '@/theme';
 
 const Root = styled.div`
   margin: 0;
@@ -9,7 +10,7 @@ const Root = styled.div`
 
 const ContentContainer = styled.div`
   width: 100%;
-  height: calc(100vh - 54px - 56px - 18px - 18px);
+  height: ${getShellHeights('contentContainer')};
 `;
 
 const MobileAppShell = ({ children, header }) => (

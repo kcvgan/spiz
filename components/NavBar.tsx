@@ -61,7 +61,7 @@ const NavBar: FC = () => {
 const AddModal = styled(motion.div)`
   z-index: 3;
   width: 100%;
-  height: 100vh;
+  height: ${getShellHeights('contentContainer')};
   border-top-left-radius: ${getBorderRadius};
   border-top-right-radius: ${getBorderRadius};
   background-color: ${getColor('backgroundGrey')};
@@ -81,15 +81,19 @@ const Modal = ({ isOpen }) => (
     {isOpen && isBrowser ? (
       <ClientOnlyPortal selector="#modal">
         <AddModal
-          initial={{ y: 160 }}
-          animate={{ y: 'calc(-100vh + 160px)' }}
-          exit={{ y: 160 }}
+          initial={{ y: 146 }}
+          animate={{ y: 'calc(-100vh + 146px)' }}
+          exit={{ y: 146 }}
           transition={{ type: 'tween', duration: 0.2, ease: 'linear' }}
         >
           <InputsContainer>
             <LabeledInput
               label="Produkt"
-              inputProps={{ type: 'text', placeholder: 'wpisz nazwę produktu' }}
+              inputProps={{
+                type: 'text',
+                placeholder: 'wpisz nazwę produktu',
+                isFocused: isOpen,
+              }}
             />
           </InputsContainer>
         </AddModal>
