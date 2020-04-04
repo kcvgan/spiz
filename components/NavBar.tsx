@@ -10,6 +10,7 @@ import {
   getPadding,
   getShellHeights,
 } from '@/theme';
+import { LabeledInput } from '@/components/Input';
 
 const Container = styled.div`
   z-index: 2;
@@ -41,7 +42,7 @@ const IconWrapper = styled.div`
 `;
 
 const NavBar: FC = () => {
-  const [isModalOpen, setModalOpen] = useState(false);
+  const [isModalOpen, setModalOpen] = useState(true);
 
   return (
     <>
@@ -66,9 +67,18 @@ const AddModal = styled(motion.div)`
   background-color: ${getColor('backgroundGrey')};
 `;
 
+const InputsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  padding: ${getPadding('large')};
+`;
+
+const isBrowser = typeof document !== 'undefined';
+
 const Modal = ({ isOpen }) => (
   <AnimatePresence>
-    {isOpen && document ? (
+    {isOpen && isBrowser ? (
       <ClientOnlyPortal selector="#modal">
         <AddModal
           initial={{ y: 160 }}
@@ -76,7 +86,12 @@ const Modal = ({ isOpen }) => (
           exit={{ y: 160 }}
           transition={{ type: 'tween', duration: 0.2, ease: 'linear' }}
         >
-          <input type="text" />
+          <InputsContainer>
+            <LabeledInput
+              label="Produkt"
+              inputProps={{ type: 'text', placeholder: 'wpisz nazwę produktu' }}
+            />
+          </InputsContainer>
         </AddModal>
       </ClientOnlyPortal>
     ) : null}

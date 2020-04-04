@@ -27,11 +27,32 @@ const shellHeights = {
 
 type ShellHeights = typeof shellHeights;
 
+const fontWeights = {
+  thin: 100,
+  regular: 300,
+  semiBold: 400,
+  bold: 600,
+};
+
+type FontWeights = typeof fontWeights;
+
+const fontSizes = {
+  small: '12px',
+  base: '16px',
+  medium: '20px',
+  large: '24px',
+  xLarge: '32px',
+};
+
+type FontSizes = typeof fontSizes;
+
 const appTheme = {
   borderRadius: '5px',
   padding,
   colors,
   shellHeights,
+  fontWeights,
+  fontSizes,
 };
 
 const getPadding = (size: keyof Padding) => (props: ThemeProps<DefaultTheme>) =>
@@ -48,5 +69,20 @@ const getShellHeights = (height: keyof ShellHeights) => ({
   theme,
 }: ThemeProps<DefaultTheme>) => theme.shellHeights[height];
 
+const getFontWeight = (weight: keyof FontWeights) => ({
+  theme,
+}: ThemeProps<DefaultTheme>) => theme.fontWeights[weight];
+
+const getFontSize = (size: keyof FontSizes) => ({
+  theme,
+}: ThemeProps<DefaultTheme>) => theme.fontSizes[size];
+
 export default appTheme;
-export { getPadding, getColor, getBorderRadius, getShellHeights };
+export {
+  getPadding,
+  getColor,
+  getBorderRadius,
+  getShellHeights,
+  getFontWeight,
+  getFontSize,
+};
