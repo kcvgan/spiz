@@ -1,10 +1,8 @@
 import React from 'react';
-import styled from 'styled-components';
 
 import { Product } from '@/components/Product.model';
 import ProductList from '@/components/ProductList';
-import { getColor, getPadding } from '@/theme';
-import NavBar from '@/components/NavBar';
+import MobileAppShell from '@/containers/MobileAppShell';
 
 const products: Product[] = [
   {
@@ -21,37 +19,10 @@ const products: Product[] = [
   },
 ];
 
-const Root = styled.div`
-  margin: 0;
-  height: calc(100vh - 160px);
-`;
-
-const Header = styled.div`
-  position: sticky;
-  top: 0;
-  z-index: 2;
-  min-height: 30px;
-  background-color: ${getColor('white')};
-  text-align: center;
-  padding: ${getPadding('large')};
-`;
-
-const BottomNav = styled.div`
-  z-index: 2;
-  min-height: 30px;
-  background-color: ${getColor('white')};
-  text-align: center;
-  padding: ${getPadding('large')};
-  position: sticky;
-  bottom: 0;
-`;
-
 const Home = () => (
-  <Root>
-    <Header>Produkty</Header>
+  <MobileAppShell header={'produkty'}>
     <ProductList {...{ products }} />
-    <NavBar />
-  </Root>
+  </MobileAppShell>
 );
 
 export default Home;

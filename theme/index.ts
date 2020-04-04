@@ -5,7 +5,8 @@ const colors = {
     secondary: 'magenta',
     lightGrey: 'lightgrey',
     white: 'white',
-    slightlyRed: '#EC615B'
+    slightlyRed: '#EC615B',
+    neonBlue: '#4639D0',
 };
 
 type Colors = typeof colors;
