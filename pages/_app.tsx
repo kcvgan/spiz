@@ -1,7 +1,7 @@
 import App from 'next/app';
 import React from 'react';
 import { ThemeProvider, createGlobalStyle } from 'styled-components';
-import appTheme from '../theme';
+import appTheme from '@/theme';
 
 const GlobalStyle = createGlobalStyle`
     body {
@@ -11,13 +11,13 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 export default class MyApp extends App {
-    render() {
-        const { Component, pageProps } = this.props;
-        return (
-            <ThemeProvider theme={appTheme}>
-                <Component {...pageProps} />
-                <GlobalStyle />
-            </ThemeProvider>
-        );
-    }
+  render() {
+    const { Component, pageProps } = this.props;
+    return (
+      <ThemeProvider theme={appTheme}>
+        <Component {...pageProps} />
+        <GlobalStyle />
+      </ThemeProvider>
+    );
+  }
 }
