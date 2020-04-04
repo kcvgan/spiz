@@ -1,0 +1,12 @@
+{
+  "name": "Pantry",
+  "short_name": "Pantry",
+  "theme_color": "white",
+  "background_color": "#2196f3",
+  "display": "standalone",
+  "orientation": "portrait",
+  "Scope": "/",
+  "start_url": "/",
+  "icons": null,
+  "splash_pages": null
+}
